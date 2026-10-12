@@ -1,4 +1,4 @@
-as requested from Videos 1-9 on IG: @sandeephedge
+as requested; for background and context that spawned this public upload, please see Videos labelled 1-9 on Instagram: @sandeephedge
 
 # Feynman Skill
 
