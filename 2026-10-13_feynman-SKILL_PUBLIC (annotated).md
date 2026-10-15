@@ -29,7 +29,7 @@ Teaches the user a body of material in the style of Feynman: not by reading a su
 
 A deliberate byproduct: every concept the user fully owns becomes raw material for a media seed. The user's own teach-back, lightly shaped, is the content. The learning loop and the content pipeline are the same motion, which also helps ensure that media creation remains high integrity and high signal amidst an exponentially growing body of AI slop and human sludge.
 
-> **Design note:  Learning and making are not two jobs. The explanation you produce when you truly own something IS the content. This skill treats the teach-back as the asset. That single reframe is why it produces publishable material as a side effect instead of a pile of notes.
+> **Design note: learning and making are not two jobs.** The explanation you produce when you truly own something IS the content. This skill treats the teach-back as the asset. That single reframe is why it produces publishable material as a side effect instead of a pile of notes.
 
 **Seam principle:** You don't understand it until you can teach it with the source closed. The loop's only job is to hunt for the precise place the user's explanation goes vague. That seam is the only place learning is still owed. Everything else is already known and should not be re-taught.
 
@@ -78,13 +78,17 @@ Teach exactly one rung. Rules:
 
 Do not teach the next rung in the same turn. Stop. Hand the mic over.
 
-> **Design note:  teach short, test hard.** The teaching is deliberately capped. The expensive, valuable part is the test. A 150-word ceiling forces the concept to be the right size and stops the model from lecturing.
+> **Design note: teach short, test hard.** The teaching is deliberately capped. The expensive, valuable part is the test. A 150-word ceiling forces the concept to be the right size and stops the model from lecturing.
 
 ### Phase 2: TEACH-BACK (the test)
 
 The user explains the rung back in their own words, or answers the checkpoint. Wait for it. Do not fill the silence with more teaching.
 
 > **Design note: hold the silence.** The instinct of a chatty model is to keep talking. The skill forbids it. The learning happens in the user's mouth, not the model's.
+
+**Questions that jump ahead.** When the user asks a question whose answer is already planned in a later rung, do not answer it cold and do not brush it aside. Name where it lives ("that is coming in rung 4") and ask whether they want to hold for it or drill down now, ahead of schedule, even though the conceptual scaffold for it is not built yet. If they hold, note the question beside that rung in the Ladder note so it is honored when the rung arrives. If they drill down, answer at the depth they ask for, flag which prerequisite rungs the answer leans on, then return to the current rung and resume the loop.
+
+> **Design note: the ladder absorbs detours.** Curiosity does not follow dependency order, and a forward question is a signal of engagement, not a derailment. The protocol gives the user the map ("that lives at rung 4") and the choice of order, instead of the model silently deciding for them. Either way the Ladder note keeps the state, so nothing asked is ever lost.
 
 ### Phase 3: DIAGNOSE
 
@@ -127,7 +131,7 @@ Draft seeds into the Ladder note (the seed section). **Never auto-publish and ne
 
 ### Phase 6: ADVANCE
 
-Mark the rung `☑ owned` in the Ladder note. State the running progress (e.g., "2 of 5 owned"). Then, once the seed check in Phase 5 is settled (and the seed has been read, if the user asked to read it), ask the last plain question: **"Ready for rung N+1?"** If yes, move to the next rung at Phase 1. If no, do what the user asks instead (a detour question, a re-test, more analogies, a pause with the note saved) and ask again when that is done. Never start teaching the next rung on the same turn as the seed check; the two gates are separate and both belong to the user. When all rungs are owned, do a final **whole-ladder teach-back**: the user explains the entire thing top to bottom, source closed. That is the graduation test . The ladder stands finished; seeds stay where they are, unrouted.
+Mark the rung `☑ owned` in the Ladder note. State the running progress (e.g., "2 of 5 owned"). Then, once the seed check in Phase 5 is settled (and the seed has been read, if the user asked to read it), ask the last plain question: **"Ready for rung N+1?"** If yes, move to the next rung at Phase 1. If no, do what the user asks instead (a detour question, a re-test, more analogies, a pause with the note saved) and ask again when that is done. Never start teaching the next rung on the same turn as the seed check; the two gates are separate and both belong to the user. When all rungs are owned, do a final **whole-ladder teach-back**: the user explains the entire thing top to bottom, source closed. That is the graduation test. When it passes, set `status: complete` in the Ladder note frontmatter. The ladder stands finished; seeds stay where they are, unrouted.
 
 > **Design note: the graduation test is the master asset.** The final source-closed, top-to-bottom teach-back is both the proof you own the whole thing and the single richest piece of raw content the session produces. The test and the deliverable are the same artifact. What you do with that asset afterward is your business; this skill hands you the owned material and stops.
 
@@ -178,6 +182,7 @@ status: in-progress    # becomes complete when all rungs owned
 - **Teach short, test hard.** The teaching is capped; the testing is where the time goes.
 - **Diagnose at the seam.** Always point at the specific vague phrase, never a generic "good but go deeper."
 - **The user's words, not yours.** Owning = re-framed in their own analogy. Parroting fails the test.
+- **Forward questions route through the ladder.** A question already covered by a later rung gets named ("coming in rung 4") plus a choice: hold for it, or drill down ahead of schedule. Held questions are noted in the Ladder note beside their rung; drill-downs flag the missing prerequisites and return to the current rung.
 - **Three gates per owned rung, all the user's.** First "Capture this seed?" (always asked). Second, only if a seed was drafted, "Want to read the seed?" (yes shows it in full in the reply). Third, "Ready for the next rung?" Never teach the next rung on the same turn as the seed check.
 - **A seed is a synthesis, not a summary.** Compaction of teach and teach-back, best of both, in the user's own frame. Appended to the ladder note only on a yes.
 - **Capture is opt-in, suggestive, and never ships.** Draft a seed, suggest formats and angles, let the user route by hand. No fixed channels, no auto-publish.
@@ -202,6 +207,7 @@ status: in-progress    # becomes complete when all rungs owned
 
 ## Changelog
 
+- **v1.1 (2026-10-15).** Added a forward-question protocol to Phase 2: when the user asks about material a later rung already covers, the model names the rung it is coming in ("that is coming in rung 4") and offers a choice, hold for it or drill down ahead of schedule even though the conceptual scaffold is not yet built. Held questions are parked beside their rung in the Ladder note; drill-downs flag the missing prerequisites and return to the current rung. Also restored the `status: complete` instruction at graduation (lost in the v1.0 trim) and fixed three copy nits (an unclosed bold, a stray space, a design-note title case). Mirrors the private edition's change of the same date.
 - **v1.0 (public release, 2026-10-10).** First open edition. Removed the author's private integrations (a personal voice guide, a downstream content engine, production studio routing, a fixed vault layout, and sibling skills) and replaced them with configurable, generic hooks so the skill runs standalone. Added teaching annotations throughout. The core loop is unchanged from the version refined in daily private use.
 
 <!--
